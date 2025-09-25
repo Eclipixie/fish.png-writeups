@@ -5,11 +5,20 @@ by Eclipixie, loki314
 Flag: `pecan{clarity_through_cubes}`
 
 We were the first team to solve the Sebucsert Cryptosystem challenge, two years after it went live in Pecan+ 2023 as that year’s ASD special, a CTF for high school students in Years 10-12 run by various professionals across the country. Notably, the challenge had remained unsolved by the organisers.
+## TL:DR
+
+The Sebucsert Cryptosystem is an implementation of trifid where each line is encrypted independently and with a period equal to the line's length.
+
+By analyzing repeated fragments, we extracted relative character bindings (i.e. which characters share X or X & Y coordinates in the cube key). These bindings allowed us to perform partial decryptions and gradually reconstruct the full key as we inferred plaintext.
+
+Once we had the key we decrypted the file and got the flag.
 
 ## Starting out
 
 Here is the information we had to start with:
 
+![“We’ve discovered an encrypted flag and the instructions used to encrypt it. We don’t know the key but the encrypted message should be long enough for us to figure it out”
+“Since its release in PECAN+ 2023, no one has solved this challenge - not even the organisers! Do you have what it takes to crack the Sebucsert Cryptosystem? A mystery prize awaits the first team to solve it” sebucsert.pdf & message.txt attached](../resources/sebucsert/chaldescription.png)
 * We also know that the flag will be formatted as `pecan{flag}`
 
 ### Excerpts from [message.txt](../resources/sebucsert/message.txt)
@@ -46,6 +55,10 @@ ISZID{CPMSWCJT_YZWRYGEC_FEZ}
 ### Excerpts from [sebucsert.pdf](../resources/sebucsert/sebucsert.pdf)
 
 - Loki
+
+![Image failed to load: Example key](../resources/sebucsert/examplekey.png)
+
+![Image failed to load: Encryptionflow - See https://en.wikipedia.org/wiki/Trifid_cipher for details (the challenge uses a dynamic period which is the total length of the line and uses an underscore as the 27th character)](../resources/sebucsert/encryptionflow.png)
 
 “To exchange messages, parties must have pre-shared a 3x3x3 cube comprised of the letters of  
 the alphabet, and underscore (‘\_’). Make sure the orientation of the cube is well-established  
