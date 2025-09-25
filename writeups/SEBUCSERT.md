@@ -179,6 +179,18 @@ key_bindings = [
 ]
 ```
 
+For a simpler example, here are the following sentences and their encrypted version.
+
+
+```
+Hi my name is John
+DOCIYQNPPQRI_SKVGB
+Hi my name is Kib, nice to meet you
+YXCIYQNPPQRI_SKPK,ENP_SRSVZPTREUNVZ
+```
+
+With that pattern near the beginning we assume the starts are the same and we learn that `x: DY XO, y: XO`
+
 ## Various plaintext assumptions
 
 - Loki
