@@ -7,7 +7,7 @@ Flag: `pecan{clarity_through_cubes}`
 We were the first team to solve the Sebucsert Cryptosystem challenge, two years after it went live in Pecan+ 2023 as that year’s ASD special, a CTF for high school students in Years 10-12 run by various professionals across the country. Notably, the challenge had remained unsolved by the organisers.
 ## TL:DR
 
-The Sebucsert Cryptosystem is an implementation of trifid where each line is encrypted independently and with a period equal to the line's length.
+The Sebucsert Cryptosystem is an implementation of a custom cryptosystem where each line is encrypted independently and with a period equal to the line's length.
 
 By analyzing repeated fragments, we extracted relative character bindings (i.e. which characters share X or X & Y coordinates in the cube key). These bindings allowed us to perform partial decryptions and gradually reconstruct the full key as we inferred plaintext.
 
@@ -66,7 +66,7 @@ with both parties.”
 
 To summarise, Sebucsert is almost functionally identical to the triphid cipher, with a dynamic period which always equals the length of the line that is being encrypted. This means that we need a decryption key, which has 27\! possibilities (far too many for an exhaustive brute-force). 27\! Is close to 10^28.
 
-There is some reading online about how trifid keys are relative and positions can be defined arbitrarily.
+There is some reading online about how trifid keys are relative and positions can be defined arbitrarily. The custom cryptosystem shares the same key structure.
 
 ## Bindings and Planes
 
